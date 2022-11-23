@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <flyorder>
+                <active>0</active>
+                <model>Skillup\FlyOrder\Model\FlyOrderPayment</model>
+                <order_status>pending</order_status>
+                <title>FlyOrder Payment</title>
+                <allowspecific>0</allowspecific>
+                <group>offline</group>
+            </flyorder>
+        </payment>
+    </default>
+</config>

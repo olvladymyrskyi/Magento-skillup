@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Skillup\Parts\Api\Data\PartInterface"
+                type="Skillup\Parts\Model\Data\Part"/>
+
+    <preference for="Skillup\Parts\Api\PartRepositoryInterface"
+                type="Skillup\Parts\Model\PartRepository"/>
+
+    <preference for="Skillup\Parts\Api\Data\PartSearchResultsInterface"
+                type="Skillup\Parts\Model\SearchResults"/>
+
+    <preference for="Skillup\Parts\Api\Data\PartManagementDataInterface"
+                type="Skillup\Parts\Model\Data\PartManagementData"/>
+
+    <preference for="Skillup\Parts\Api\PartManagementInterface"
+                type="Skillup\Parts\Model\PartManagement"/>
+</config>

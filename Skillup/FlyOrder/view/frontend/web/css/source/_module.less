@@ -1,0 +1,116 @@
+.widget-weather-compact {
+    width: auto;
+    min-height: 235px;
+    display: inline-block;
+    position: relative;
+    border-radius: 6px;
+    margin: 0 5px 5px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 10px -2px 20px 2px rgba(0, 0, 0, .3);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    font-family: "Roboto", Arial, sans-serif !important;
+}
+
+.widget-weather-title {
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 15px auto 0;
+    padding: 0 0 5px;
+    border-bottom: 2px solid #333;
+
+    .title-name {
+        float: left;
+        margin: 0;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 1;
+        color: #333;
+        word-break: break-word;
+        max-width: 470px;
+    }
+}
+
+.weather-card-row1 {
+    width: auto;
+    height: 128px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    .weather-card-img {
+        display: block;
+        width: 128px;
+        height: 128px;
+    }
+
+    .weather-card-number {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 1.3;
+        color: #333;
+        margin: 0 auto;
+        padding-top: 20px;
+        letter-spacing: -4px;
+        padding-right: 15px;
+
+        span {
+            color: #333;
+            padding-top: 3px;
+        }
+    }
+
+}
+
+.weather-card-rising {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.weather-card-wind {
+    margin: 0;
+    font-size: 12px;
+    padding: 2px 0;
+}
+
+.weather-card-grayscale {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.widget-weather-night {
+    background: -webkit-linear-gradient(#00111e 30%, #033d5e);
+    background: -moz-linear-gradient(#00111e 30%, #033d5e);
+    background: -o-linear-gradient(#00111e 30%, #033d5e);
+    background: linear-gradient(#00111e 30%, #033d5e);
+    overflow: hidden;
+
+    .widget-weather-title{
+        border-bottom: 2px solid  #fff1ad;
+
+        .title-name {
+            color: #fff1ad;
+        }
+    }
+
+    .widget-card {
+        color: #fff;
+    }
+
+    .weather-card-row1 .weather-card-number {
+        color: #fff1ad;
+    }
+
+    .weather-card-row1 .weather-card-number span {
+        color: #fff;
+    }
+}

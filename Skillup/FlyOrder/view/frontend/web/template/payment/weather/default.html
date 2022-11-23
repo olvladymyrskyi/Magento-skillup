@@ -1,0 +1,42 @@
+<!-- ko if:weather -->
+<div class="widget-weather widget-weather-compact widget-weather-night">
+    <div class="widget-weather-title">
+        <div class="title-3">
+            <h2 class="title-name">
+                <!-- ko i18n: 'Weather for '--><!-- /ko -->
+                <span data-bind="text: weather().city"></span>,
+                <span data-bind="text: weather().country"></span>
+            </h2>
+        </div>
+    </div>
+    <div class="widget-card ">
+        <div class="weather-card-row1">
+            <div class="weather-card-col1 weather-card-grayscale">
+                <img
+                    data-bind="attr: {
+                        'src': weather().icon,
+                        'width': 128,
+                        'height': 128,
+                        'alt': weather().title,
+                        'title': weather().title
+                        }"/>
+            </div>
+            <div class="weather-card-col2">
+                <p class="weather-card-number">
+                    <!-- ko text: weather().temp --><!-- /ko -->
+                    <span class="weather-card-degree">°C</span>
+                </p>
+                <span class="weather-card-rising">and rising</span>
+            </div>
+        </div>
+        <div class="weather-card-row2">
+            <p class="weather-card-means" data-bind="text: weather().description"></p>
+            <p class="weather-card-wind">
+                <!-- ko i18n: 'Wind:'--><!-- /ko -->
+                <!-- ko text: weather().windSpeed --><!-- /ko -->
+                <!-- ko text: weather().windBeaufort--><!-- /ko -->
+            </p>
+        </div>
+    </div>
+</div>
+<!-- /ko -->

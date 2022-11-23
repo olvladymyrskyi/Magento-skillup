@@ -1,0 +1,17 @@
+type Query {
+    partData (
+        code: String @doc(description: "Part code")
+    ): Part @resolver(class: "Skillup\\PartsGraphQl\\Model\\Resolver\\Part") @doc(description: "The query returns information about a Part")
+    parts: [Part]  @resolver(class: "Skillup\\PartsGraphQl\\Model\\Resolver\\Parts") @doc(description: "Get Parts")
+
+}
+
+type Part @doc(description: "Part") {
+    part_id: Int! @doc(description: "Part Id")
+    code: String @doc(description: "Part code")
+    name: String @doc(description: "Part name")
+    created_at: String @doc(description: "Created At")
+    updated_at: String @doc(description: "Updated At")
+}
+
+
