@@ -1,0 +1,32 @@
+<?php /** @var $block \Skillup\Success\Block\Onepage\Success */ ?>
+<div class="checkout-success">
+    <div class="success-wrapper">
+        <?php if ($block->getOrderId()) : ?>
+            <h3 class="title-3"><?= __('Your order has been accepted.') ?></h3>
+            <p>
+                <?= __('Your items are on the way and will arrive shortly. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.') ?>
+            </p>
+            <dl>
+                <dt><?= __('Order Numder') ?></dt>
+                <dd><b><?= $block->getOrderId() ?></b></dd>
+                <dt><?= __('Order Date') ?></dt>
+                <dd><?= $block->getDate() ?></dd>
+                <dt><?= __('Shipped to') ?></dt>
+                <dd><?= $block->getCustomerName() ?></dd>
+                <dt><?= __('Items') ?></dt>
+                <dd><?= $block->getTotalItemCount() ?></dd>
+            </dl>
+        <?php endif; ?>
+        <div class="actions-toolbar">
+            <a href="<?= $block->escapeUrl($block->getLoginUrl()) ?>"
+               class="action primary">
+                <span><?= $block->escapeHtml(__('Track my order')) ?></span>
+            </a>
+            <a href="<?= $block->escapeUrl($block->getLoginUrl()) ?>"
+               class="action primary">
+                <span><?= $block->escapeHtml(__('Details')) ?></span>
+            </a>
+        </div>
+    </div>
+    <?= $block->getChildHtml('', false) ?>
+</div>

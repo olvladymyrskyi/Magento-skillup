@@ -1,0 +1,25 @@
+<?php
+/** @var $block \Skillup\Success\Block\Recap */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+?>
+<div id="recap" data-bind="scope:'recap'" class="checkout-container">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "#recap": {
+                "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+            }
+        }
+    </script>
+
+    <?php $serializedCheckoutConfig = /* @noEscape */
+        $scriptString = <<<script
+                window.checkoutConfig = JSON.parse(sessionStorage.getItem("checkoutConfig"));
+                // Create aliases for customer.js model from customer module
+                window.isCustomerLoggedIn = window.checkoutConfig.isCustomerLoggedIn;
+                window.customerData = window.checkoutConfig.customerData;
+        script;
+    ?>
+    <?= /* @noEscape */
+    $secureRenderer->renderTag('script', [], $scriptString, false) ?>
+</div>

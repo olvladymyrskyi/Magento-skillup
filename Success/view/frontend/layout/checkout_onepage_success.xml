@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Success Page</title>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <block class="Magento\Checkout\Block\Onepage\Success" name="checkout.success.print.button"
+                   template="Magento_Checkout::button.phtml"/>
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Thank you for your purchase!</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Skillup\Success\Block\Onepage\Success" name="checkout.success"
+                   template="Skillup_Success::success.phtml" cacheable="false">
+                <block class="Skillup\Success\Block\Onepage\Recap" name="checkout.recap"
+                       template="Skillup_Success::recap.phtml" cacheable="false">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <item name="components" xsi:type="array">
+                                <item name="recap" xsi:type="array">
+                                    <item name="component" xsi:type="string">Skillup_Success/js/view/recap</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">Skillup_Success/recap</item>
+                                    </item>
+                                    <item name="children" xsi:type="array">
+                                        <item name="sidebar" xsi:type="array">
+                                            <item name="component" xsi:type="string">Magento_Checkout/js/view/sidebar
+                                            </item>
+                                            <item name="displayArea" xsi:type="string">sidebar</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template" xsi:type="string">Magento_Checkout/sidebar</item>
+                                            </item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="summary" xsi:type="array">
+                                                    <item name="component" xsi:type="string">
+                                                        Magento_Checkout/js/view/summary
+                                                    </item>
+                                                    <item name="displayArea" xsi:type="string">summary</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template" xsi:type="string">
+                                                            Magento_Checkout/summary
+                                                        </item>
+                                                    </item>
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="cart_items" xsi:type="array">
+                                                            <item name="component" xsi:type="string">
+                                                                Magento_Checkout/js/view/summary/cart-items
+                                                            </item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="details" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Magento_Checkout/js/view/summary/item/details
+                                                                    </item>
+                                                                    <item name="children" xsi:type="array">
+                                                                        <item name="thumbnail" xsi:type="array">
+                                                                            <item name="component" xsi:type="string">
+                                                                                Magento_Checkout/js/view/summary/item/details/thumbnail
+                                                                            </item>
+                                                                            <item name="displayArea" xsi:type="string">
+                                                                                before_details
+                                                                            </item>
+                                                                        </item>
+                                                                        <item name="subtotal" xsi:type="array">
+                                                                            <item name="component" xsi:type="string">
+                                                                                Magento_Checkout/js/view/summary/item/details/subtotal
+                                                                            </item>
+                                                                            <item name="displayArea" xsi:type="string">
+                                                                                after_details
+                                                                            </item>
+                                                                        </item>
+                                                                        <item name="message" xsi:type="array">
+                                                                            <item name="component" xsi:type="string">
+                                                                                Magento_Checkout/js/view/summary/item/details/message
+                                                                            </item>
+                                                                            <item name="displayArea" xsi:type="string">
+                                                                                item_message
+                                                                            </item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                        <item name="totals" xsi:type="array">
+                                                            <item name="component" xsi:type="string">
+                                                                Magento_Checkout/js/view/summary/totals
+                                                            </item>
+                                                            <item name="displayArea" xsi:type="string">totals</item>
+                                                            <item name="config" xsi:type="array">
+                                                                <item name="template" xsi:type="string">
+                                                                    Magento_Checkout/summary/totals
+                                                                </item>
+                                                            </item>
+                                                            <item name="children" xsi:type="array">
+                                                                <!-- sort order for this totals is configured on admin panel-->
+                                                                <!-- Stores->Configuration->SALES->Sales->General->Checkout Totals Sort Order -->
+                                                                <item name="shipping" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Skillup_Success/js/view/success/summary/shipping</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="title" xsi:type="string" translate="true">Shipping</item>
+                                                                        <item name="notCalculatedMessage" xsi:type="string" translate="true">Not yet calculated</item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="subtotal" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Checkout/js/view/summary/subtotal</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="title" xsi:type="string" translate="true">Cart Subtotal</item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="tax" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">
+                                                                        Magento_Tax/js/view/checkout/summary/tax
+                                                                    </item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="title" xsi:type="string"
+                                                                              translate="true">Tax
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="grand-total" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">Magento_Tax/js/view/checkout/summary/grand-total</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <item name="exclTaxLabel" xsi:type="string" translate="true">Order Total Excl. Tax</item>
+                                                                        <item name="inclTaxLabel" xsi:type="string" translate="true">Order Total Incl. Tax</item>
+                                                                        <item name="basicCurrencyMessage" xsi:type="string" translate="true">You will be charged for</item>
+                                                                        <item name="title" xsi:type="string" translate="true">Order Total</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </argument>
+                    </arguments>
+                </block>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="checkout.registration" remove="true"/>
+    </body>
+</page>
